@@ -1,0 +1,17 @@
+{
+  "name": "fsp-wbs-rn",
+  "displayName": "fsp-wbs-rn",
+  "expo": {
+    "name": "fsp-wbs-rn",
+    "slug": "fsp-wbs-rn",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
