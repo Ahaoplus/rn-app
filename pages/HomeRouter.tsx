@@ -8,6 +8,7 @@ import 'react-native-gesture-handler';
 import { NavigationContainer,DefaultTheme } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Icon } from "@ant-design/react-native";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -51,9 +52,9 @@ export default function Router(props:any) {
         ...DefaultTheme,
         dark: true,
         colors: {
-            primary: "rgb(255, 45, 85)",
-            background: "#F7F8F6",
-            card: "rgb(255, 255, 255)",
+            primary: "rgb(0, 255, 0)",
+            background: "#EFEFEF",
+            card: "#1FA4FF",
             text: "#222222",
             border: "rgb(199, 199, 204)",
         },
@@ -61,25 +62,56 @@ export default function Router(props:any) {
    return (
      <NavigationContainer theme={MyTheme}>
       <Tab.Navigator
-      initialRouteName="Feed"
-      tabBarOptions={{
-        activeTintColor: '#e91e63',
-      }}
+        initialRouteName="News"
+        tabBarOptions={{
+          activeTintColor: 'black',
+        }}
       >
       
       <Tab.Screen
-        name="主页" component={HomeStackScreen}
+        name="News" 
+        component={HomeStackScreen}
         options={{
-          tabBarLabel: '主页',
+          tabBarLabel: '资讯',
           headerTransparent: false,
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home"/>
+            <MaterialCommunityIcons name="newspaper" size={24} color="black" />
           ),
         }}
       />
-      <Tab.Screen name="消息" component={MessageStackScreen} />
-      <Tab.Screen name="搜索" component={SearchingStackScreen} />
-      <Tab.Screen name="设置" component={SettingsStackScreen} /> 
+      <Tab.Screen 
+        name="消息" 
+        component={MessageStackScreen} 
+        options={{
+            tabBarLabel: '资讯',
+            headerTransparent: false,
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons size={24} name="message"/>
+            ),
+          }}
+      />
+      <Tab.Screen 
+        name="搜索" 
+        component={SearchingStackScreen} 
+        options={{
+          tabBarLabel: '资讯',
+          headerTransparent: false,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons size={24} name="home"/>
+          ),
+        }}
+      />
+      <Tab.Screen 
+        name="设置" 
+        component={SettingsStackScreen} 
+        options={{
+          tabBarLabel: '资讯',
+          headerTransparent: false,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons size={24} name="home"/>
+          ),
+        }}
+      /> 
      </Tab.Navigator> 
      </NavigationContainer>
     
